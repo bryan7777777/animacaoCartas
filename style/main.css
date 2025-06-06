@@ -43,13 +43,25 @@ html, body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 10px; 
+  z-index: 3
 }
 #div4 {
-  background: purple; z-index: 3;
+  background-image: url(../img/background/loja1.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 10px;  
   z-index: 4;
 }
 #div5 {
-  background: darkgreen;
+  background-color: rgba(15, 21, 27, 0.956);
+  background-image: url(../img/background/backgoundItens.png);
+  background-size: 80% 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 10px;
   z-index: 5;
 }
 
@@ -131,6 +143,25 @@ button {
     transform: translateY(-300px) rotate(20deg);
     opacity: 0;
   }
+}
+/* INVENTARIO */
+#div5{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#box--menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.menu--imagens img{
+  height: 500px;
+  width: 700px;
 }
 
 /* LUTA */
