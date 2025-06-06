@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./../style/reset.css" />
+  <link rel="stylesheet" href="./../style/main.css" />
+  <script src="./../script/main.js" defer></script>
+</head>
+<body>
+  <div id="game">
+    <div class="tela selecaoPlayer" id="div1">
+      <h1>SELEÇÃO</h1>
+      <button onclick="proximaTela()">ir para mapa</button>
+    </div>
+    <div class="tela mapa" id="div2">
+      <h1>MAPA</h1>
+      <button onclick="proximaTela()">ir para luta</button>
+      <button onclick="irParaDiv4()">ir para loja</button>
+      <button onclick="irParaDiv5()">ir para inventário</button>
+    </div>
+    <div class="tela luta" id="div3">
+      <h1>LUTA</h1>
+      <button onclick="irParaDiv2()">voltar para mapa</button>
+      <button onclick="irParaDiv5()">ir para inventário</button>
+      <div class="hand" id="hand"></div>
+    </div>
+    <div class="tela loja" id="div4">
+      <h1>LOJA</h1>
+      <button onclick="irParaDiv2()">voltar para mapa</button>
+      <button onclick="irParaDiv5()">ir para inventário</button>
+    </div>
+    <div class="tela inventario" id="div5">
+      <h1>INVENTÁRIO</h1>
+      <button onclick="voltarAnterior()">voltar para anterior</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GÆA PROTOCOL</title>
   <link rel="stylesheet" href="./style/reset.css">
-  <link rel="stylesheet" href="./style/main.css">
-  <script src="./script/main.js" defer></script>
+  <link rel="stylesheet" href="./style/tela.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet" />
+  <script src="./script/tela.js" defer></script>
 </head>
+
 <body>
-<div id="game">
-  <div class="tela inicio" id="div1">
-    <h1>TELA DE INICIO</h1>
-    <button onclick="proximaTela()">jogar</button>
+  <div class="container">
+    <h1 id="title" class="glitch" data-text="GÆA PROTOCOL">GÆA PROTOCOL</h1>
+    <div id="menu" class="menu hidden">
+      <a href="./pages/jogo.html"><button class="glitch-btn" onclick="glitchClick()">Novo Jogo</button></a>
+      <button class="glitch-btn" onclick="glitchClick()">Continuar</button>
+      <button class="glitch-btn" onclick="glitchClick()">Opções</button>
+    </div>
+
   </div>
-  <div class="tela selecaoPlayer" id="div2">
-    <h1>SELEÇÃO</h1>
-    <button onclick="proximaTela()">confirma seleção</button>
-  </div>
-  <div class="tela mapa" id="div3">
-    <h1>MAPA</h1>
-    <button onclick="proximaTela()">icon</button>
-  </div>
-  <div class="tela luta" id="div4">
-    <h1>LUTA</h1>
-    <button onclick="proximaTela()">luta</button>
-    <div class="hand" id="hand"></div>
-  </div>
-</div>
 
 
 </body>
+
 </html>

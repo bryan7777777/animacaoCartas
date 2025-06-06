@@ -1,12 +1,48 @@
-// TROCA ENTRE AS TELAS
 let telaAtual = 1;
+let telaAnterior = null;
+
+function mostrarTela(n) {
+  for(let i = 1; i <= 5; i++) {
+    const tela = document.getElementById(`div${i}`);
+    if(tela) {
+      if(i === n) {
+        tela.style.transform = "translateY(0)";
+        tela.style.zIndex = 10;
+      } else {
+        tela.style.transform = "translateY(100%)";
+        tela.style.zIndex = i;
+      }
+    }
+  }
+  telaAtual = n;
+}
 
 function proximaTela() {
-  if (telaAtual >= 4) return;
+  if (telaAtual >= 3) return;
+  mostrarTela(telaAtual + 1);
+}
 
-  telaAtual++;
-  const proxima = document.getElementById(`div${telaAtual}`);
-  proxima.style.transform = "translateY(0)";
+function irParaDiv2() {
+  mostrarTela(2);
+}
+
+function irParaDiv4() {
+  telaAnterior = telaAtual;
+  mostrarTela(4);
+}
+
+function irParaDiv5() {
+  telaAnterior = telaAtual;
+  mostrarTela(5);
+}
+
+function voltarAnterior() {
+  if(telaAnterior) {
+    mostrarTela(telaAnterior);
+    telaAnterior = null;
+  } else {
+    mostrarTela(1);
+  }
 }
 
 // LUTA
