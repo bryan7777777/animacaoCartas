@@ -7,12 +7,18 @@
   <link rel="stylesheet" href="./../style/reset.css" />
   <link rel="stylesheet" href="./../style/main.css" />
   <script src="./../script/main.js" defer></script>
+  <script src="./../script/selecaoPersonagem.js" defer></script>
 </head>
 <body>
   <div id="game">
     <div class="tela selecaoPlayer" id="div1">
-      <h1>SELEÇÃO</h1>
-      <button onclick="proximaTela()">ir para mapa</button>
+      <h1>SELEÇÃO DE PERSONAGEM:</h1>
+      <div id="selecaoPlayer">
+        <div class="personagens" id="laranja"><img src="./../img/icons/iconsPlayer/capacetelaranja.png" alt=""></div>
+        <div class="personagens" id="amarelo"><img src="./../img/icons/iconsPlayer/capaceteamarelo.png" alt=""></div>
+        <div class="personagens" id="azul"><img src="./../img/icons/iconsPlayer/capaceteazul.png" alt=""></div>
+      </div>
+      <button id="fimSelecao" onclick="proximaTela()">CONFIRMAR SELEÇÃO DE PERSONAGEM</button>
     </div>
     <div class="tela mapa" id="div2">
       <h1>MAPA</h1>
