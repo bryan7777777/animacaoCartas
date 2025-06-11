@@ -44,6 +44,40 @@ function voltarAnterior() {
     mostrarTela(1);
   }
 }
+// SELECAO
+document.getElementById('laranja').addEventListener('click', selecao);
+document.getElementById('amarelo').addEventListener('click', selecao);
+document.getElementById('azul').addEventListener('click', selecao);
+
+function selecao(event) {
+  document.querySelectorAll('.personagens').forEach(el => {
+    el.classList.remove('ativo');
+});
+event.currentTarget.classList.add('ativo');
+
+const id = event.currentTarget.id;
+
+let usuario;
+
+  switch (id) {
+    case 'azul':
+      usuario = 3;
+      break;
+    case 'amarelo':
+      usuario = 2;
+      break;
+    case 'laranja':
+      usuario = 1;
+      break;
+    default:
+      usuario = null;
+
+    luta(usuario); // funçao que retorna o personagem do player
+}
+};
+
+// MAPA
+
 
 // LUTA
 const hand = document.getElementById('hand');
