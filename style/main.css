@@ -189,14 +189,14 @@ button {
 }
 
 #azul:hover, #azul.ativo{
-  border: solid 4px blue;
-  box-shadow: 2px 2px 75px 2px blue;
-  background-color: rgba(0, 17, 255, 0.3);
+  border: solid 4px rgb(16, 175, 219);
+  box-shadow: 2px 2px 75px 2px rgb(12, 137, 171);
+  background-color: rgba(0, 149, 255, 0.3);
 }
 
 #amarelo:hover, #amarelo.ativo{
-  border: solid 4px yellow;
-  box-shadow: 2px 2px 75px 2px yellow;
+  border: solid 4px rgb(231, 201, 7);
+  box-shadow: 2px 2px 75px 2px rgb(231, 201, 7);
   background-color: rgba(238, 255, 0, 0.3);
 }
 

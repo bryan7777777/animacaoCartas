@@ -1,6 +1,20 @@
 let telaAtual = 1;
 let telaAnterior = null;
 
+document.getElementById('fimSelecao').addEventListener('click', proximaTela);
+
+document.getElementById('mapaUm').addEventListener('click', proximaTela);
+document.getElementById('mapaDois').addEventListener('click', irParaDiv4);
+document.getElementById('mapaTres').addEventListener('click', irParaDiv5);
+
+document.getElementById('lutaUm').addEventListener('click', irParaDiv2);
+document.getElementById('lutaDois').addEventListener('click', irParaDiv5);
+
+document.getElementById('lojaUm').addEventListener('click', irParaDiv2);
+document.getElementById('lojaDois').addEventListener('click', irParaDiv5);
+
+document.getElementById('inventario').addEventListener('click', voltarAnterior);
+
 function mostrarTela(n) {
   for(let i = 1; i <= 5; i++) {
     const tela = document.getElementById(`div${i}`);

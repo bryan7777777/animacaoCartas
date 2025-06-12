@@ -61,11 +61,11 @@
     transform: scale(1.1);
   }
   .inimigo  { background: #d33; }
-  .loot     { background: #fd0; color: black; }
-  .loja     { background: #0d8; }
-  .elite    { background: #a3f; }
-  .hospital { background: #4cf; }
-  .boss     { background: #000; border: 2px solid white; }
+  .loot     { background: #4cf; color: black; }
+  .loja     { background: rgb(254, 254, 82); }
+  .elite    { background: rgb(247, 69, 155); }
+  .hospital { background: rgb(65, 255, 65); }
+  .boss     { background: #a722ff; border: 2px solid white; }
   .invalido { opacity: 0; pointer-events: none; }
   .nodo.inacessivel {
     background-color: #444 !important;
@@ -93,7 +93,7 @@
 <canvas id="conexoes"></canvas>
 
 <script>
-const tipos = ['inimigo', 'loot', 'loja', 'elite'];
+const tipos = ['inimigo', 'loot', 'loja', 'elite', 'hospital'];
 const mapa = [];
 const numFases = 10;           // total de colunas (fases) = 10 (inclui inicial e boss)
 const caminhosPorFase = 5;     // linhas por coluna
