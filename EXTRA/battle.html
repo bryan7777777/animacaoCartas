@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batalha Mecha</title>
+    <link rel="stylesheet" href="battle.css" />
+    <script src="battle.js"></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="status-bar">
+        <span>❤️ 100/100</span>
+        <span>🪙 310</span>
+      </div>
+
+      <div class="battlefield">
+        <progress id="player-hp" value="100" max="100"></progress>
+        <img
+          src="../img/mecas/Robô Mecha Pixelizado (1).png"
+          class="mecha player"
+        />
+        <progress id="enemy-hp" value="100" max="100"></progress>
+        <img src="../img/inimigos/minion.png" class="mecha enemy" />
+      </div>
+
+      <div class="cards-container">
+        <div class="card">Carta 1</div>
+        <div class="card">Carta 2</div>
+        <div class="card">Carta 3</div>
+        <div class="card">Carta 4</div>
+      </div>
+
+    <div class="hands">
+      <img class="card1" src="../img/cards/table-card.png" alt="" />
+      <button class="run" onclick="runAway()">CORRER</button>
+      <img class="table" src="../img/cards/Tabble.png" alt="" />
+      <button class="turn" onclick="endTurn()">FIM DE TURNO</button>
+      <img class="card2" src="../img/cards/table-card.png" alt="" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
