@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            height: 100vh;
+        }
+
+        .bloco{
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .card{
+            width: 195px;
+            height: 290px;
+            background-image: url(./../img/cards/cartaAzul.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card img{
+            width: 60%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            top: 38%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            border: solid 2px rgb(151, 207, 255);
+        }
+
+        .cardInfo{
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.478);
+            width: 80%;
+            height: 40%;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: top;
+            text-align: center;
+            color: rgb(151, 207, 255);
+            font-size: 10px;
+        }
+
+        .energia{
+            position: absolute;
+            top: 1.5%;
+            left: 16.5%;
+            color: rgb(7, 43, 73);
+            font-size: 30px;
+            background-color: rgba(0, 136, 255, 0.401);
+            border-radius: 100%;
+            box-shadow: 0px 0px 10px 10px rgba(0, 136, 255, 0.401);
+        }
+
+    </style>
+    <div class="bloco">
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/def/Blindagem.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">Barreira</h1>
+            <p class="cardDescription">aumenta a sua defesa em 50 pts nesse turno</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>3</strong></p>
+        <img class="icon" src="./../img/cards/buff/Cura.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>2</strong></p>
+        <img class="icon" src="./../img/cards/buff/sobreCarga.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>1</strong></p>
+        <img class="icon" src="./../img/cards/atk/LancaGranadas.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/ExplosaoDeEnergia.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/tiroCarregado.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/inpacto.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    </div>
+
+    <!-- BLOCO -->
+    <div class="bloco">
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/def/Blindagem.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">Barreira</h1>
+            <p class="cardDescription">aumenta a sua defesa em 50 pts nesse turno</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>3</strong></p>
+        <img class="icon" src="./../img/cards/buff/Cura.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>2</strong></p>
+        <img class="icon" src="./../img/cards/buff/sobreCarga.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>1</strong></p>
+        <img class="icon" src="./../img/cards/atk/LancaGranadas.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/ExplosaoDeEnergia.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/tiroCarregado.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/inpacto.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    </div>
+
+    <!-- BLOCO -->
+    <div class="bloco">
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/def/Blindagem.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">Barreira</h1>
+            <p class="cardDescription">aumenta a sua defesa em 50 pts nesse turno</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>3</strong></p>
+        <img class="icon" src="./../img/cards/buff/Cura.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>2</strong></p>
+        <img class="icon" src="./../img/cards/buff/sobreCarga.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>1</strong></p>
+        <img class="icon" src="./../img/cards/atk/LancaGranadas.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/ExplosaoDeEnergia.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/tiroCarregado.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    <div class="card">
+        <p class="energia"><strong>0</strong></p>
+        <img class="icon" src="./../img/cards/atk/inpacto.png" alt="">
+        <div class="cardInfo">
+            <h1 class="cardTitle">SEI LA</h1>
+            <p class="cardDescription">TXT ALEATORIO</p>
+        </div>
+    </div>
+    </div>
+    <script></script>
+</body>
+</html>
