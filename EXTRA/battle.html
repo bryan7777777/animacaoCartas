@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Batalha Mecha</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="battle.css" />
     <script src="battle.js"></script>
   </head>
@@ -15,29 +19,28 @@
       </div>
 
       <div class="battlefield">
+        <div class="p1">
+          <img id="p1-battle"
+            src="../img/mecas/Robô Mecha Pixelizado (1).png"
+            class="mecha player" onclick="roboatk()"
+          />
         <progress id="player-hp" value="100" max="100"></progress>
-        <img
-          src="../img/mecas/Robô Mecha Pixelizado (1).png"
-          class="mecha player"
-        />
+        </div>
+        <div class="p2">
+        <img src="../img/inimigos/minion.png" class="mecha enemy animate__animated animate__fadeIn animate__shakeX" />
         <progress id="enemy-hp" value="100" max="100"></progress>
-        <img src="../img/inimigos/minion.png" class="mecha enemy" />
+        </div>
       </div>
 
-      <div class="cards-container">
-        <div class="card">Carta 1</div>
-        <div class="card">Carta 2</div>
-        <div class="card">Carta 3</div>
-        <div class="card">Carta 4</div>
-      </div>
+<footer class="footer">
 
     <div class="hands">
       <img class="card1" src="../img/cards/table-card.png" alt="" />
-      <button class="run" onclick="runAway()">CORRER</button>
       <img class="table" src="../img/cards/Tabble.png" alt="" />
       <button class="turn" onclick="endTurn()">FIM DE TURNO</button>
       <img class="card2" src="../img/cards/table-card.png" alt="" />
     </div>
+</footer>
 
     <script src="script.js"></script>
   </body>

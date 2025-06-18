@@ -9,3 +9,16 @@ function endTurn() {
     alert("Você venceu!");
   }
 }
+
+function roboatk() {
+    
+    const robo = document.getElementById('p1-battle');
+    
+    robo.addEventListener('click', () => {
+        robo.classList.remove('player');
+        
+        void robo.offsetWidth;
+        
+        robo.classList.add('player');
+    });
+}
