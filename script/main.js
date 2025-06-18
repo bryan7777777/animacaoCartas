@@ -188,7 +188,7 @@ shadow.innerHTML = `
 
 // Começa o código JavaScript isolado no Shadow DOM
 (() => {
-  const tipos = ['inimigo', 'loot', 'loja', 'elite'];
+  const tipos = ['inimigo', 'hospital', 'loja', 'elite'];
   const mapa = [];
   const numFases = 10;
   const caminhosPorFase = 5;
@@ -274,13 +274,13 @@ shadow.innerHTML = `
         el.classList.add('nodo', nodo.tipo);
         el.dataset.pos = `${i}-${j}`;
         el.textContent = {
-          boss: '👑',
-          inimigo: '⚔',
-          loot: '🎁',
-          loja: '🛒',
-          elite: '💀',
-          hospital: '❤️',
+        boss: '👑',
+        inimigo: '⚔',
+        loja: '🛒',
+        elite: '💀',
+        hospital: '❤️',
         }[nodo.tipo] || '';
+
         el.addEventListener('click', () => clicarNodo(i, j));
         colDiv.appendChild(el);
         nodo.element = el;
@@ -322,30 +322,32 @@ shadow.innerHTML = `
   }
 
   function clicarNodo(i, j) {
-    if (!iniciado) {
-      if (i === 0 && j === Math.floor(caminhosPorFase / 2)) {
-        iniciado = true;
-        nodoAtual = { i, j };
-        alert(`Iniciando batalha na sala: ${mapa[i][j].tipo}`);
-        atualizarAcessibilidade();
-        marcarSelecionado();
-        centralizarNodo(mapa[i][j].element);
-      } else {
-        alert('Clique no ponto inicial para começar.');
-      }
-      return;
-    }
+  const tipo = mapa[i][j].tipo;
 
-    if (i === nodoAtual.i + 1 && mapa[nodoAtual.i][nodoAtual.j].conexoes.includes(j)) {
+  if (!iniciado) {
+    if (i === 0 && j === Math.floor(caminhosPorFase / 2)) {
+      iniciado = true;
       nodoAtual = { i, j };
-      alert(`Você chegou em uma sala do tipo: ${mapa[i][j].tipo}`);
+      executarAcao(tipo);
       atualizarAcessibilidade();
       marcarSelecionado();
       centralizarNodo(mapa[i][j].element);
     } else {
-      alert('Você só pode avançar para os pontos conectados na próxima fase.');
+      alert('Clique no ponto inicial para começar.');
     }
+    return;
   }
+
+  if (i === nodoAtual.i + 1 && mapa[nodoAtual.i][nodoAtual.j].conexoes.includes(j)) {
+    nodoAtual = { i, j };
+    executarAcao(tipo);
+    atualizarAcessibilidade();
+    marcarSelecionado();
+    centralizarNodo(mapa[i][j].element);
+  } else {
+    alert('Você só pode avançar para os pontos conectados na próxima fase.');
+  }
+}
 
   function atualizarAcessibilidade() {
     mapa.forEach((coluna, i) => {
@@ -387,6 +389,31 @@ shadow.innerHTML = `
     const scrollX = rect.left - contRect.left + mapaContainer.scrollLeft - contRect.width / 2 + rect.width / 2;
     mapaContainer.scrollTo({ left: scrollX, behavior: "smooth" });
   }
+
+  function executarAcao(tipo) {
+  switch (tipo) {
+    case 'inimigo':
+    case 'elite':
+    case 'boss':
+      telaAnterior = 2;
+      mostrarTela(3); // Tela de luta (div3)
+      break;
+
+    case 'loja':
+      telaAnterior = 2;
+      mostrarTela(4); // Tela da loja (div4)
+      break;
+
+    case 'hospital':
+      telaAnterior = 2;
+      mostrarTela(5); // Tela do hospital (div5)
+      break;
+
+    default:
+      alert('Tipo de sala não reconhecido.');
+  }
+}
+
 
   gerarMapa();
   desenharMapa();
