@@ -7,6 +7,8 @@
 </head>
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap');
+
         body{
             background-color: #000;
             display: flex;
@@ -58,10 +60,10 @@
 
         .cardInfo{
             position: absolute;
-            top: 50%;
+            top: 60%;
             background-color: rgba(0, 0, 0, 0.478);
             width: 80%;
-            height: 40%;
+            height: 30%;
             border-radius: 25px;
             display: flex;
             flex-direction: column;
@@ -69,11 +71,12 @@
             justify-content: top;
             text-align: center;
             color: rgb(182, 182, 182);
-            font-size: 10px;
+            font-size: 6.5px;
+            font-family: "Geo", sans-serif;
         }
         
         .cardInfo p{
-            font-size: 15px;
+            font-size: 13px;
         }
 
         .energia{
@@ -147,14 +150,14 @@
     </div>
     </div>
 
-    <!-- BLOCO -->
+    <!-- BLOCO VERMELHO-->
     <div class="bloco">
     <div class="card1">
         <p class="energia"><strong>3</strong></p>
         <img class="icon" src="./../img/cards/atk/chuvaestilhaco.png" alt="">
         <div class="cardInfo">
             <h1 class="cardTitle">Chuva de Fragmentos</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <p class="cardDescription">Causa 5 de dano a todos os inimigos.</p>
         </div>
     </div>
     <div class="card1">
@@ -162,7 +165,7 @@
         <img class="icon" src="./../img/cards/atk/LancaGranadas.png" alt="">
         <div class="cardInfo">
             <h1 class="cardTitle">Lança-Granadas</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <p class="cardDescription">Causa 12 de dano e atordoa por 1 turno.</p>
         </div>
     </div>
     <div class="card1">
@@ -170,7 +173,7 @@
         <img class="icon" src="./../img/cards/atk/ExplosaoDeEnergia.png" alt="">
         <div class="cardInfo">
             <h1 class="cardTitle">Explosão de Energia</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <p class="cardDescription">Causa 10 de dano e ignora barreiras.</p>
         </div>
     </div>
     <div class="card1">
@@ -178,7 +181,7 @@
         <img class="icon" src="./../img/cards/atk/tiroCarregado.png" alt="">
         <div class="cardInfo">
             <h1 class="cardTitle">Tiro Carregado</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <p class="cardDescription">Causa 15 de dano.</p>
         </div>
     </div>
     <div class="card1">
@@ -186,127 +189,95 @@
         <img class="icon" src="./../img/cards/atk/inpacto.png" alt="">
         <div class="cardInfo">
             <h1 class="cardTitle">Impacto Cinético</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <p class="cardDescription">Causa 6 de dano e empurra o inimigo para trás.</p>
         </div>
     </div>
     </div>
 
-    <!-- BLOCO -->
+    <!-- BLOCO VERDE-->
     <div class="bloco">
     <div class="card2">
         <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/def/Blindagem.png" alt="">
+        <img class="icon" src="./../img/cards/buff/impulsoVerd.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">Barreira</h1>
-            <p class="cardDescription">aumenta a sua defesa em 50 pts nesse turno</p>
+            <h1 class="cardTitle">Impulso de Nanomáquinas</h1>
+            <p class="cardDescription">Regenera 8 pontos de vida.</p>
         </div>
     </div>
     <div class="card2">
         <p class="energia"><strong>3</strong></p>
         <img class="icon" src="./../img/cards/buff/Cura.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Adrenalina Sintética</h1>
+            <p class="cardDescription">Garante +1 de ação no próximo turno.</p>
         </div>
     </div>
     <div class="card2">
         <p class="energia"><strong>2</strong></p>
         <img class="icon" src="./../img/cards/buff/sobreCarga.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Overclocking</h1>
+            <p class="cardDescription">Aumenta o dano em 30% por 2 turnos.</p>
         </div>
     </div>
     <div class="card2">
         <p class="energia"><strong>1</strong></p>
-        <img class="icon" src="./../img/cards/atk/LancaGranadas.png" alt="">
+        <img class="icon" src="./../img/cards/buff/neural.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Sincronização Neural</h1>
+            <p class="cardDescription">Reduz o custo de cartas de ataque em 1 por 2 turnos.</p>
         </div>
     </div>
     <div class="card2">
         <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/atk/ExplosaoDeEnergia.png" alt="">
+        <img class="icon" src="./../img/cards/buff/reforcoDeEstrutura.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
-        </div>
-    </div>
-    <div class="card2">
-        <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/atk/tiroCarregado.png" alt="">
-        <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
-        </div>
-    </div>
-    <div class="card2">
-        <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/atk/inpacto.png" alt="">
-        <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Reforço de Estrutura</h1>
+            <p class="cardDescription">Aumenta a vida máxima em 10 pontos até o final da batalha.</p>
         </div>
     </div>
     </div>
 
-    <!-- BLOCO -->
+    <!-- BLOCO AZUL-->
     <div class="bloco">
     <div class="card">
         <p class="energia"><strong>0</strong></p>
         <img class="icon" src="./../img/cards/def/Blindagem.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">Barreira</h1>
-            <p class="cardDescription">aumenta a sua defesa em 50 pts nesse turno</p>
+            <h1 class="cardTitle">Blindagem Reforçada</h1>
+            <p class="cardDescription">Reduz o dano recebido em 4 por 2 turnos.</p>
         </div>
     </div>
     <div class="card">
         <p class="energia"><strong>3</strong></p>
-        <img class="icon" src="./../img/cards/buff/Cura.png" alt="">
+        <img class="icon" src="./../img/cards/def/campoDeForca.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Campo de Força</h1>
+            <p class="cardDescription">Absorve 12 de dano recebido.</p>
         </div>
     </div>
     <div class="card">
         <p class="energia"><strong>2</strong></p>
-        <img class="icon" src="./../img/cards/buff/sobreCarga.png" alt="">
+        <img class="icon" src="./../img/cards/def/escudoHolo.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Barreira</h1>
+            <p class="cardDescription">Anula o próximo ataque sofrido</p>
         </div>
     </div>
     <div class="card">
         <p class="energia"><strong>1</strong></p>
-        <img class="icon" src="./../img/cards/atk/LancaGranadas.png" alt="">
+        <img class="icon" src="./../img/cards/def/impulsoAzul.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Deslocamento Rápido</h1>
+            <p class="cardDescription">Aumenta evasão em 20% por 1 turno.</p>
         </div>
     </div>
     <div class="card">
         <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/atk/ExplosaoDeEnergia.png" alt="">
+        <img class="icon" src="./../img/cards/def/sisReflexao.png" alt="">
         <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
-        </div>
-    </div>
-    <div class="card">
-        <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/atk/tiroCarregado.png" alt="">
-        <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
-        </div>
-    </div>
-    <div class="card">
-        <p class="energia"><strong>0</strong></p>
-        <img class="icon" src="./../img/cards/atk/inpacto.png" alt="">
-        <div class="cardInfo">
-            <h1 class="cardTitle">SEI LA</h1>
-            <p class="cardDescription">TXT ALEATORIO</p>
+            <h1 class="cardTitle">Sistema de Reflexão</h1>
+            <p class="cardDescription">Devolve 50% do dano recebido ao atacante.</p>
         </div>
     </div>
     </div>
