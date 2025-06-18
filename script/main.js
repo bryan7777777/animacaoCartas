@@ -419,6 +419,13 @@ shadow.innerHTML = `
   desenharMapa();
 })();
 
+
+
+
+var myMusic = new Audio("./../audio/artblock.ogg");
+myMusic.loop = true;
+myMusic.play();
+
 // LUTA
 const hand = document.getElementById('hand');
     const cartas  = [
