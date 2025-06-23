@@ -1,0 +1,89 @@
+/* CSS para estilizar a tela */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(../img/background/backfundoposfight.png);
+    background-color: #333; /* Cor de fundo provisória */
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.vida{
+  width: 30px;
+}
+
+.picareta{
+  padding-top: 10px;
+  width: 30px;
+}
+
+.algas{
+  width: 29px;
+}
+
+.map{
+  width: 30px;
+  
+}
+
+
+.main-panel {
+    background-color: rgba(30, 30, 30, 0.85);
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.recompensas-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recompensas-option {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, filter 0.2s;
+    text-align: center;
+}
+
+.recompensas-option:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.recompensas-option img {
+    max-width: 150px;
+    height: auto;
+}
+
+.picareta{
+  padding-top: 40px;
+  width: 180px;
+}
+
+.algas{
+  width: 150px;
+  padding-bottom: 25px;
+}
