@@ -1,0 +1,105 @@
+/* style/main.css */
+
+body {
+    background: url("../img/background/imagem.png") no-repeat fixed;
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden; /* Evita barras de rolagem indesejadas */
+    color: white;
+    font-family: sans-serif;
+}
+
+#game {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.tela {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(100%); /* Começa fora da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* TELA 1: SELEÇÃO */
+.selecaoPlayer h1 {
+    font-size: 2.5em;
+}
+
+#selecaoPlayer {
+    display: flex;
+    gap: 50px;
+}
+
+.personagens {
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    border: 4px solid transparent;
+    border-radius: 15px;
+}
+
+.personagens:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.personagens.ativo {
+    border-color: #f5c542;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #f5c542;
+}
+
+#fimSelecao {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #333;
+    color: #f5c542;
+    border: 2px solid #f5c542;
+    border-radius: 10px;
+}
+
+/* TELA 2: MAPA */
+.mapa {
+    /* O mapa agora usa um Shadow DOM, então seu CSS está no main.js */
+    /* Este espaço é para estilos que possam ser necessários fora do Shadow DOM */
+    justify-content: initial; 
+}
+
+/* TELAS 4 e 5: LOJA E HOSPITAL */
+.loja h1, .inventario h1 {
+    font-size: 3em;
+}
+
+.navigation-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}

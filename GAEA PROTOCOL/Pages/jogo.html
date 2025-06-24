@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GÆA PROTOCOL - O Jogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../style/reset.css" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <link rel="stylesheet" href="../style/battle.css" />
+</head>
+<body>
+    <div id="game">
+        <div class="tela selecaoPlayer" id="div1">
+            <h1>SELEÇÃO DE PERSONAGEM:</h1>
+            <div id="selecaoPlayer">
+                <div class="personagens" id="laranja"><img src="../img/icons/iconsPlayer/capacetelaranja.png" alt="Capacete Laranja"></div>
+                <div class="personagens" id="amarelo"><img src="../img/icons/iconsPlayer/capaceteamarelo.png" alt="Capacete Amarelo"></div>
+                <div class="personagens" id="azul"><img src="../img/icons/iconsPlayer/capaceteazul.png" alt="Capacete Azul"></div>
+            </div>
+            <button id="fimSelecao">CONFIRMAR SELEÇÃO</button>
+        </div>
+
+        <div class="tela mapa" id="div2">
+            <audio src="../audio/artblock.ogg" id="audio" loop></audio>
+        </div>
+
+        <div class="tela luta" id="div3">
+            <div class="game-container">
+                <div class="status-bar">
+                    <div class="life-cash">
+                        <span>❤️ 100/100</span>
+                        <span>🪙 310</span>
+                        <div class="box-itens">
+                            <span><img class="vida use-action" src="../img/icons/iconsMapa/Vida2.png" alt="vida"></span>
+                            <span><img class="picareta use-action" src="../img/icons/iconsMapa/Picareta2.png" alt="picareta"></span>
+                            <span><img class="algas use-action" src="../img/icons/iconsMapa/Algas.png" alt="algas"></span>
+                        </div>
+                    </div>
+                    <div class="icon-map">
+                        <img class="map-icon" src="../img/icons/iconsMapa/Map.png" alt="mapa">
+                    </div>
+                </div>
+
+                <div class="battlefield">
+                    <div class="p1">
+                        <img id="p1-battle" src="../img/mecas/Robô Mecha Pixelizado (1).png" class="mecha animate__animated" onclick="playerAttackSequence()" />
+                        <progress id="player-hp" value="100" max="100"></progress>
+                    </div>
+                    <div class="p2">
+                        <img id="enemy-mecha" src="../img/inimigos/tartaruga.png" class="mecha enemy animate__animated" />
+                        <progress id="enemy-hp" value="100" max="100"></progress>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="hands">
+                        <div class="hand-container" id="hand"></div>
+                        <button class="turn-btn" onclick="endTurn()">FIM DE TURNO</button>
+                    </div>
+                </footer>
+
+                <div id="rewards-screen" class="hidden">
+                    <main class="main-panel">
+                        <h1>Você purificou uma zona contaminada!</h1>
+                        <h2>Escolha uma recompensa</h2>
+                        <section class="recompensas-container">
+                            <div class="recompensas-option" data-reward="vida">
+                                <img class="pos-vida" src="../img/icons/iconsMapa/Vida2.png" alt="Vida">
+                            </div>
+                            <div class="recompensas-option" data-reward="picareta">
+                                <img class="pos-picareta" src="../img/icons/iconsMapa/Picareta2.png" alt="Óleo" />
+                            </div>
+                            <div class="recompensas-option" data-reward="algas">
+                                <img class="pos-algas" src="../img/icons/iconsMapa/Algas.png" alt="Algas" />
+                            </div>
+                        </section>
+                    </main>
+                </div>
+                
+                 <div class="navigation-buttons">
+                    <button id="lutaUm">Voltar para Mapa</button>
+                    <button id="lutaDois">Ir para Hospital</button>
+                 </div>
+            </div>
+        </div>
+
+        <div class="tela loja" id="div4">
+            <h1>LOJA</h1>
+            <button id="lojaUm">Voltar para Mapa</button>
+            <button id="lojaDois">Ir para Hospital</button>
+        </div>
+
+        <div class="tela inventario" id="div5">
+            <h1>HOSPITAL</h1>
+            <button id="inventario">Voltar para tela anterior</button>
+        </div>
+    </div>
+
+    <script src="../script/main.js"></script>
+    <script src="../script/cards.js"></script>
+    <script src="../script/battle.js"></script>
+</body>
+</html>
