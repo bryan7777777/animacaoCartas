@@ -52,7 +52,14 @@ body {
 
 .map{
   width: 30px;
-  
+}
+
+.use-action{
+  cursor: pointer;
+}
+
+.use-action:hover{
+  transform: scale(1.1);
 }
 
 /* MECHAS */
@@ -78,11 +85,6 @@ body {
   padding-top: 17%;
   transform: scaleX(-1);
 }
-
-.animate__shakeX {
-  animation-duration: 0.8s ;
-}
-
 
 progress {
   display: flex;
@@ -135,3 +137,124 @@ footer {
     transform: translate(0, 0) rotate(0deg); /* retorna à posição inicial */
   }
 }
+
+.enemy-attacker {
+  animation: enemy-atk 1.7s ease-in-out;
+}
+
+@keyframes enemy-atk {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(30px, 0) rotate(0deg); /* avança para a esquerda */
+  }
+  30% {
+    transform: translate(80px, 0px) rotate(15deg); /* cabeçada inclinada */
+  }
+  45% {
+    transform: translate(30px, 0px) rotate(0deg); /* recuo da cabeçada */
+  }
+  50% {
+    transform: translate(20px, 0) rotate(0deg); /* volta da cabeçada */
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg); /* retorna à posição inicial */
+  }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Estilos para a tela de recompensa funcionar como um overlay */
+#rewards-screen {
+    position: fixed; /* Fica por cima de todo o conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fique na frente */
+}
+
+/* O painel principal dentro do overlay (código que você já tinha) */
+.main-panel {
+    background-color: rgba(30, 30, 30, 0.85);
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    /* Adiciona animação de fade-in */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.map{
+  width: 30px;
+}
+
+.pos-picareta{
+  padding-top: 40px;
+  width: 180px;
+}
+
+.pos-algas{
+  width: 150px;
+  padding-bottom: 25px;
+}
+
+
+.main-panel {
+    background-color: rgba(30, 30, 30, 0.85);
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.recompensas-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recompensas-option {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, filter 0.2s;
+    text-align: center;
+}
+
+.recompensas-option:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.recompensas-option img {
+    max-width: 150px;
+    height: auto;
+}
+
+

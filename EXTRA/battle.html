@@ -18,9 +18,9 @@
         <span>❤️ 100/100</span>
         <span>🪙 310</span>
         <div class="box-itens">
-        <span><img class="vida" src="../img/icons/iconsMapa/Vida2.png" alt="vida"></span>
-        <span><img class="picareta" src="../img/icons/iconsMapa/Picareta2.png" alt="picareta"></span>
-        <span><img class="algas" src="../img/icons/iconsMapa/Algas.png" alt="picareta"></span>
+        <span><img class="vida use-action" src="../img/icons/iconsMapa/Vida2.png" alt="vida"></span>
+        <span><img class="picareta use-action" src="../img/icons/iconsMapa/Picareta2.png" alt="picareta"></span>
+        <span><img class="algas use-action" src="../img/icons/iconsMapa/Algas.png" alt="picareta"></span>
         </div>
         </div>
         <div class="icon-map">
@@ -32,26 +32,47 @@
         <div class="p1">
           <img id="p1-battle"
             src="../img/mecas/Robô Mecha Pixelizado (1).png"
-            class="mecha player" onclick="roboatk()"
-          />
+            class="mecha animate__animated" onclick="roboatk()"
+          />          
         <progress id="player-hp" value="100" max="100"></progress>
-        </div>
-        <div class="p2">
-        <img src="../img/inimigos/minion.png" class="mecha enemy animate__animated animate__fadeIn animate__shakeX" />
-        <progress id="enemy-hp" value="100" max="100"></progress>
-        </div>
       </div>
+      <div class="p2">
+        <img
+          id="enemy-mecha" src="../img/inimigos/minion.png"
+          class="mecha enemy animate__animated" />
+          <progress id="enemy-hp" value="100" max="100"></progress>
+      </div>
+    </div>
 
 <footer class="footer">
-
     <div class="hands">
-      <img class="card1" src="../img/cards/table-card.png" alt="" />
-      <img class="table" src="../img/cards/Tabble.png" alt="" />
-      <button class="turn" onclick="endTurn()">FIM DE TURNO</button>
-      <img class="card2" src="../img/cards/table-card.png" alt="" />
+        <img class="card1" src="../img/cards/table-card.png" alt="" />
+        <img class="table" src="../img/cards/Tabble.png" alt="" />
+        <button class="turn" onclick="endTurn()">FIM DE TURNO</button>
+        <img class="card2" src="../img/cards/table-card.png" alt="" />
     </div>
 </footer>
 
-    <script src="script.js"></script>
-  </body>
+<div id="rewards-screen" class="hidden">
+    <main class="main-panel">
+        <h1>Você purificou uma zona contaminada!</h1>
+        <h2>Escolha uma recompensa</h2>
+
+        <section class="recompensas-container">
+            <div id="recompensas-card" class="recompensas-option" data-reward="vida">
+                <img class="pos-vida" src="../img/icons/iconsMapa/Vida2.png" alt="Vida">
+            </div>
+
+            <div id="recompensas-oil" class="recompensas-option" data-reward="picareta">
+                <img class="pos-picareta" src="../img/icons/iconsMapa/Picareta2.png" alt="Óleo" />
+            </div>
+
+            <div id="recompensas-pickaxe" class="recompensas-option" data-reward="algas">
+                <img class="pos-algas" src="../img/icons/iconsMapa/Algas.png" alt="Algas" />
+            </div>
+        </section>
+    </main>
+</div>
+<script src="battle.js"></script>
+</body>
 </html>
