@@ -32,15 +32,17 @@
         <div class="p1">
           <img id="p1-battle"
             src="../img/mecas/Robô Mecha Pixelizado (1).png"
-            class="mecha player" onclick="roboatk()"
-          />
+            class="mecha animate__animated" onclick="roboatk()"
+          />          
         <progress id="player-hp" value="100" max="100"></progress>
-        </div>
-        <div class="p2">
-        <img src="../img/inimigos/minion.png" class="mecha enemy animate__animated animate__fadeIn animate__shakeX" />
-        <progress id="enemy-hp" value="100" max="100"></progress>
-        </div>
       </div>
+      <div class="p2">
+        <img
+          id="enemy-mecha" src="../img/inimigos/minion.png"
+          class="mecha enemy animate__animated" />
+          <progress id="enemy-hp" value="100" max="100"></progress>
+      </div>
+    </div>
 
 <footer class="footer">
 
