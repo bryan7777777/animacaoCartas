@@ -1,81 +1,123 @@
-// battle.js - VERSÃO FINAL E SEM CONFLITOS
+// battle.js - VERSÃO FINAL COM TELA DE RECOMPENSAS
 
+// --- Variáveis de Controle ---
 let isPlayerTurn = true;
 let isBattleOver = false;
 
+// --- Funções de Batalha ---
+
 function roboatk() {
-  if (!isPlayerTurn || isBattleOver) return;
-  isPlayerTurn = false;
-  console.log("--- Início do Turno do Jogador ---");
-  playerAttackSequence();
+    if (!isPlayerTurn || isBattleOver) return;
+    isPlayerTurn = false;
+    playerAttackSequence();
 }
 
 function playerAttackSequence() {
-  const playerMecha = document.getElementById('p1-battle');
-  const enemyMecha = document.getElementById('enemy-mecha');
-  const enemyHP = document.getElementById('enemy-hp');
+    const playerMecha = document.getElementById('p1-battle');
+    const enemyMecha = document.getElementById('enemy-mecha');
+    const enemyHP = document.getElementById('enemy-hp');
 
-  // Adiciona a classe de ataque e a remove quando a animação terminar
-  playerMecha.classList.add('player');
-  playerMecha.addEventListener('animationend', function handler() {
-    playerMecha.classList.remove('player');
-    playerMecha.removeEventListener('animationend', handler); // Limpa o listener
-  });
+    playerMecha.classList.add('player');
+    playerMecha.addEventListener('animationend', function handler() {
+        playerMecha.classList.remove('player');
+        playerMecha.removeEventListener('animationend', handler);
+    });
 
-  // Reação do inimigo ao dano
-  setTimeout(() => {
-    enemyHP.value -= 15;
-    const damageAnimation = 'animate__headShake';
-    enemyMecha.classList.add(damageAnimation);
-    
-    // Limpa a animação de dano do inimigo
     setTimeout(() => {
-      enemyMecha.classList.remove(damageAnimation);
-    }, 1000);
+        enemyHP.value -= 15; // Dano do jogador
+        const damageAnimation = 'animate__headShake';
+        enemyMecha.classList.add(damageAnimation);
 
-    if (enemyHP.value <= 0) {
-      isBattleOver = true;
-      alert("Você venceu!");
-      return;
-    }
+        setTimeout(() => {
+            enemyMecha.classList.remove(damageAnimation);
+        }, 1000);
 
-    // Passa o turno para o inimigo
-    setTimeout(enemyAttackSequence, 1500);
-  }, 600);
+        // --- LÓGICA DE VITÓRIA ---
+        if (enemyHP.value <= 0) {
+            isBattleOver = true;
+            console.log("Você venceu! Mostrando recompensas...");
+            // Atraso para a animação de morte do inimigo antes de mostrar as recompensas
+            setTimeout(showRewardScreen, 1000);
+            return;
+        }
+        // -------------------------
+
+        setTimeout(enemyAttackSequence, 1500);
+    }, 600);
 }
 
 function enemyAttackSequence() {
-  console.log("--- Início do Turno do Inimigo ---");
-  const playerMecha = document.getElementById('p1-battle');
-  const enemyMecha = document.getElementById('enemy-mecha');
-  const playerHP = document.getElementById('player-hp');
+    if (isBattleOver) return; // Garante que o inimigo não ataque se já foi derrotado
+    const playerMecha = document.getElementById('p1-battle');
+    const enemyMecha = document.getElementById('enemy-mecha');
+    const playerHP = document.getElementById('player-hp');
 
-  // Adiciona a classe de ataque do inimigo e a remove quando a animação terminar
-  enemyMecha.classList.add('enemy-attacker');
-  enemyMecha.addEventListener('animationend', function handler() {
-    enemyMecha.classList.remove('enemy-attacker');
-    enemyMecha.removeEventListener('animationend', handler); // Limpa o listener
-  });
+    enemyMecha.classList.add('enemy-attacker');
+    enemyMecha.addEventListener('animationend', function handler() {
+        enemyMecha.classList.remove('enemy-attacker');
+        enemyMecha.removeEventListener('animationend', handler);
+    });
 
-  // Reação do jogador ao dano
-  setTimeout(() => {
-    playerHP.value -= 10;
-    const damageAnimation = 'animate__headShake';
-    playerMecha.classList.add(damageAnimation);
-
-    // Limpa a animação de dano do jogador
     setTimeout(() => {
-      playerMecha.classList.remove(damageAnimation);
-    }, 1000);
+        playerHP.value -= 10; // Dano do inimigo
+        const damageAnimation = 'animate__headShake';
+        playerMecha.classList.add(damageAnimation);
 
-    if (playerHP.value <= 0) {
-      isBattleOver = true;
-      alert("Você foi derrotado!");
-      return;
-    }
+        setTimeout(() => {
+            playerMecha.classList.remove(damageAnimation);
+        }, 1000);
 
-    // Devolve o turno ao jogador
-    console.log("--- Fim do Turno do Inimigo. Sua vez! ---");
-    isPlayerTurn = true;
-  }, 600);
+        if (playerHP.value <= 0) {
+            isBattleOver = true;
+            alert("Você foi derrotado!");
+            // Aqui você pode adicionar lógica para reiniciar ou voltar ao menu
+            // window.location.reload(); 
+            return;
+        }
+
+        isPlayerTurn = true;
+    }, 600);
 }
+
+
+// --- Funções da Tela de Recompensa ---
+
+function showRewardScreen() {
+    // Esconde a interface de batalha
+    const battlefield = document.querySelector('.battlefield');
+    const footer = document.querySelector('.footer');
+    battlefield.classList.add('hidden');
+    footer.classList.add('hidden');
+
+    // Mostra a tela de recompensas
+    const rewardsScreen = document.getElementById('rewards-screen');
+    rewardsScreen.classList.remove('hidden');
+}
+
+function selectReward(event) {
+    // Pega o tipo de recompensa do atributo 'data-reward'
+    const rewardType = event.currentTarget.dataset.reward;
+    
+    console.log(`Recompensa escolhida: ${rewardType}`);
+    alert(`Você escolheu: ${rewardType}!`);
+
+    // Esconde a tela de recompensas
+    const rewardsScreen = document.getElementById('rewards-screen');
+    rewardsScreen.classList.add('hidden');
+
+    // Lógica pós-recompensa: O que fazer agora?
+    // Exemplo: Voltar para a tela do mapa
+    // alert("Retornando ao mapa...");
+    // window.location.href = 'mapa.html'; // Descomente para redirecionar
+}
+
+
+// --- Inicialização ---
+
+// Adiciona os 'escutadores' de clique nas opções de recompensa assim que a página carregar
+document.addEventListener('DOMContentLoaded', () => {
+    const rewardOptions = document.querySelectorAll('.recompensas-option');
+    rewardOptions.forEach(option => {
+        option.addEventListener('click', selectReward);
+    });
+});
