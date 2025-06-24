@@ -188,7 +188,7 @@ shadow.innerHTML = `
 
 // Começa o código JavaScript isolado no Shadow DOM
 (() => {
-  const tipos = ['inimigo', 'hospital', 'loja', 'elite'];
+  const tipos = ['inimigo', 'hospital', 'elite'];
   const mapa = [];
   const numFases = 10;
   const caminhosPorFase = 5;
