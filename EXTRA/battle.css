@@ -83,7 +83,6 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 17%;
-  transform: scaleX(-1);
 }
 
 progress {
@@ -95,7 +94,6 @@ progress {
 .hands {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 20px;
   align-items: center;
 }
 
@@ -168,16 +166,16 @@ footer {
     transform: translate(0, 0) rotate(0deg);
   }
   20% {
-    transform: translate(30px, 0) rotate(0deg); /* avança para a esquerda */
+    transform: translate(-30px, 0) rotate(0deg); /* avança para a esquerda */
   }
   30% {
-    transform: translate(80px, 0px) rotate(15deg); /* cabeçada inclinada */
+    transform: translate(-80px, 0px) rotate(-15deg); /* cabeçada inclinada */
   }
   45% {
-    transform: translate(30px, 0px) rotate(0deg); /* recuo da cabeçada */
+    transform: translate(-30px, 0px) rotate(0deg); /* recuo da cabeçada */
   }
   50% {
-    transform: translate(20px, 0) rotate(0deg); /* volta da cabeçada */
+    transform: translate(-20px, 0) rotate(0deg); /* volta da cabeçada */
   }
   100% {
     transform: translate(0, 0) rotate(0deg); /* retorna à posição inicial */
@@ -199,6 +197,16 @@ footer {
     transform: translate(-50%, -50%) scale(1.2); /* Centraliza e aumenta um pouco */
     z-index: 100; /* Garante que a carta fique na frente de tudo */
     pointer-events: none; /* Impede que seja clicada novamente no meio da tela */
+}
+
+/* Estilo para o texto de HP abaixo das barras de vida */
+.hp-text {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px black; /* Sombra para melhorar a leitura */
+  font-family: 'Arial', sans-serif;
+  font-size: 1em;
 }
 
 .hidden {
@@ -316,15 +324,14 @@ h2 {
 /* Animação para a carta Impacto Cinético */
 @keyframes push-back-anim {
   50% {
-    transform: translateX(50px) scaleX(-1); /* O scaleX(-1) mantém o inimigo virado para o jogador */
+    transform: translateX(50px) scaleX(1);
   }
   100% {
-    transform: scaleX(-1); /* Retorna à posição original */
+    transform: scaleX(1); /* Retorna à posição original */
   }
 }
 
 .pushed-back {
-    /* É importante manter o transform original do inimigo */
     transform-origin: center; 
     animation: push-back-anim 0.5s ease-out;
 }

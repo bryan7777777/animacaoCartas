@@ -15,7 +15,7 @@ const impulsoDeNanomaquinas = { name: 'Impulso de Nanomáquinas', imageSrc: '../
 const lancaGranadas = { name: 'Lança-Granadas', imageSrc: '../img/cards/Cards vermelho/Lança Granadas.png', type: 'attack', effect: function(caster, target) { console.log(`${caster.id} usou Lança-Granadas!`); dealDamage(caster, target, 18); target.effects.isStunned = true; console.log(`${target.id} está atordoado!`); } };
 const overclocking = { name: 'Overclocking', imageSrc: '../img/cards/Cards verde/Overclocking.png', effect: function(caster, targets) { console.log(`${caster.id} usou Overclocking!`); caster.effects.damageBonus = 0.30; caster.effects.damageBonusDuration = 3; console.log(`Dano aumentado em 30% por 2 turnos.`); } };
 const reforcoDeEstrutura = { name: 'Reforço de Estrutura', imageSrc: '../img/cards/Cards verde/Reforço de Estrutura.png', effect: function(caster, targets) { console.log(`${caster.id} usou Reforço de Estrutura!`); caster.maxHp += 10; caster.hp += 10; console.log(`Vida máxima aumentada para ${caster.maxHp}.`); } };
-const sincronizacaoNeural = { name: 'Sincronização Neural', imageSrc: '../img/cards/Cards verde/Sincronização Neural.png', effect: function(caster, targets) { console.log(`${caster.id} usou Sincronização Neural!`); drawCard(); console.log(`Uma carta foi comprada.`); } };
+// const sincronizacaoNeural = { name: 'Sincronização Neural', imageSrc: '../img/cards/Cards verde/Sincronização Neural.png', effect: function(caster, targets) { console.log(`${caster.id} usou Sincronização Neural!`); drawCard(); console.log(`Uma carta foi comprada.`); } };
 const sistemaDeReflexao = { name: 'Sistema de Reflexão', imageSrc: '../img/cards/Cards azul/Sistema de Reflexão.png', effect: function(caster, targets) { console.log(`${caster.id} ativou o Sistema de Reflexão!`); caster.effects.reflectDamageBonus = 0.60; caster.effects.reflectDamageDuration = 2; console.log(`Refletirá 60% do dano por 1 turno.`); } };
 const tiroCarregado = { name: 'Tiro Carregado', imageSrc: '../img/cards/Cards vermelho/Tiro Carregado.png', type: 'attack', effect: function(caster, target) { console.log(`${caster.id} usou Tiro Carregado!`); dealDamage(caster, target, 30); } };
 
@@ -23,7 +23,7 @@ const tiroCarregado = { name: 'Tiro Carregado', imageSrc: '../img/cards/Cards ve
 const cardDatabase = {
     adrenalinaSintetica, barreira, blindagemReforcada, campoDeForca, chuvaDeFragmentos,
     deslocamentoRapido, explosaoDeEnergia, impactoCinetico, impulsoDeNanomaquinas,
-    lancaGranadas, overclocking, reforcoDeEstrutura, sincronizacaoNeural,
+    lancaGranadas, overclocking, reforcoDeEstrutura, //sincronizacaoNeural,
     sistemaDeReflexao, tiroCarregado
 };
 
@@ -38,6 +38,7 @@ const player = {
     barrier: 10,
     mechaElement: document.getElementById('p1-battle'),
     hpBar: document.getElementById('player-hp'),
+    hpValueText: document.getElementById('player-hp-value'),
     hpText: document.querySelector('.life-cash span:nth-child(1)'),
     barrierText: document.getElementById('player-barrier'),
     effects: {
@@ -60,6 +61,7 @@ const enemy = {
     baseDamage: 8,
     mechaElement: document.getElementById('enemy-mecha'),
     hpBar: document.getElementById('enemy-hp'),
+    hpValueText: document.getElementById('enemy-hp-value'),
     effects: {
         isStunned: false
     }
@@ -236,6 +238,10 @@ function updateUI() {
     
     player.hpText.textContent = `❤️ ${player.hp}/${player.maxHp}`;
     if (player.barrierText) player.barrierText.textContent = player.barrier;
+
+    // ADICIONE ESTAS DUAS LINHAS
+    if (player.hpValueText) player.hpValueText.textContent = `${player.hp} / ${player.maxHp}`;
+    if (enemy.hpValueText) enemy.hpValueText.textContent = `${enemy.hp} / ${enemy.maxHp}`;
 }
 
 function animateAttack(element, animationClass) {
