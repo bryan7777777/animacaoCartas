@@ -9,14 +9,14 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
     <link rel="stylesheet" href="battle.css" />
-    <script src="battle.js"></script>
+  <script type="module" src="../script/battle.js"></script>  
   </head>
   <body>
     <div class="game-container">
       <div class="status-bar">
         <div class="life-cash">
         <span>❤️ 100/100</span>
-        <span>🪙 310</span>
+        <span>🛡️ <span id="player-barrier">10</span></span>
         <div class="box-itens">
         <span><img class="vida use-action" src="../img/icons/iconsMapa/Vida2.png" alt="vida"></span>
         <span><img class="picareta use-action" src="../img/icons/iconsMapa/Picareta2.png" alt="picareta"></span>
@@ -32,7 +32,7 @@
         <div class="p1">
           <img id="p1-battle"
             src="../img/mecas/Robô Mecha Pixelizado (1).png"
-            class="mecha animate__animated" onclick="roboatk()"
+            class="mecha animate__animated"
           />          
         <progress id="player-hp" value="100" max="100"></progress>
       </div>
@@ -47,15 +47,15 @@
 <footer class="footer">
     <div class="hands">
         <img class="card1 descarte" src="../img/cards/descarte.png" alt="" />
-        <div class="hand-table">
-          <img class="card1 mao1" src="../img/cards/Cards azul/card-azul3.png" alt="">
-          <img class="card1 mao2" src="../img/cards/Cards vermelho/card-vermelho3.png" alt="">
-          <img class="card1 mao3" src="../img/cards/Cards verde//card-verde3.png" alt="">
-          <img class="card1 mao4" src="../img/cards/Cards azul/card-azul1.png" alt="">
-        </div>
+<div class="hand-table">
+    <img class="card1 mao1" src="../img/cards/Cards azul/Barreira.png" alt="" data-card-id="barreira">
+    <img class="card1 mao2" src="../img/cards/Cards vermelho/Explosão de Energia.png" alt="" data-card-id="explosaoDeEnergia">
+    <img class="card1 mao3" src="../img/cards/Cards verde/Overclocking.png" alt="" data-card-id="overclocking">
+    <img class="card1 mao4" src="../img/cards/Cards azul/Blindagem Reforçada.png" alt="" data-card-id="blindagemReforcada">
+</div>
         <!-- <img class="table" src="../img/cards/Tabble.png" alt="" /> -->
-        <button class="turn" onclick="endTurn()">FIM DE TURNO</button>
-        <img class="card2" src="../img/cards/versoCard.png" alt="" />
+        <!-- <button class="turn" onclick="endTurn()">FIM DE TURNO</button> -->
+        <img id="deck-draw" class="card2" src="../img/cards/versoCard.png" alt="" />
     </div>
 </footer>
 

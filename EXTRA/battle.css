@@ -184,6 +184,23 @@ footer {
   }
 }
 
+/* Adicione esta transição para que as cartas da mão se movam suavemente */
+.hand-table .card1 {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Esta é a nova classe que o JavaScript vai adicionar à carta clicada.
+  Ela posiciona a carta no centro da tela.
+*/
+.card-played {
+    position: fixed !important; /* Usa !important para sobrepor outros estilos de posição */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2); /* Centraliza e aumenta um pouco */
+    z-index: 100; /* Garante que a carta fique na frente de tudo */
+    pointer-events: none; /* Impede que seja clicada novamente no meio da tela */
+}
+
 .hidden {
     display: none !important;
 }
@@ -278,4 +295,36 @@ h2 {
     height: auto;
 }
 
+/* COMPRAS DE CARTAS */
 
+/* Animação para a carta que é comprada */
+@keyframes draw-animation {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-drawn {
+  animation: draw-animation 0.5s ease-out;
+}
+
+/* Animação para a carta Impacto Cinético */
+@keyframes push-back-anim {
+  50% {
+    transform: translateX(50px) scaleX(-1); /* O scaleX(-1) mantém o inimigo virado para o jogador */
+  }
+  100% {
+    transform: scaleX(-1); /* Retorna à posição original */
+  }
+}
+
+.pushed-back {
+    /* É importante manter o transform original do inimigo */
+    transform-origin: center; 
+    animation: push-back-anim 0.5s ease-out;
+}
