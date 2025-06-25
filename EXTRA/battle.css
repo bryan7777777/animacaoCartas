@@ -94,7 +94,7 @@ progress {
 
 .hands {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 20px;
   align-items: center;
 }
@@ -102,7 +102,28 @@ progress {
 .table,
 .card1,
 .card2 {
-  height: 180px;
+  height: 190px;
+  cursor: pointer;
+}
+
+
+.card2{
+  height: 196px;
+}
+
+.card2:hover{
+  transform: scale(1.1);
+}
+
+.descarte:hover{
+  transform: scale(1.1);
+}
+
+.mao1:hover,
+.mao2:hover,
+.mao3:hover,
+.mao4:hover {
+  transform: translateY(-30px);
 }
 
 footer {
