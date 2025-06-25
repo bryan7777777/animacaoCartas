@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Cartas</title>
+  <link rel="stylesheet" href="teste2.css">
+</head>
+<body>
+  <div id="game">
+    <div id="hud">
+      <div id="player-hud">
+        <div id="player-img"></div>
+        <div class="stats">
+          <p>HP: <span id="player-hp">50</span>/50</p>
+          <p>Escudo: <span id="player-shield">0</span></p>
+          <p>Energia: <span id="player-energy">3</span>/3</p>
+        </div>
+      </div>
+
+      <div id="enemy-area"></div>
+    </div>
+
+    <div id="battle-effects"></div>
+
+    <div class="zones">
+      <div id="discard-pile" class="pile">Descarte</div>
+      <div class="hand" id="hand"></div>
+      <div id="end-turn">Pular Turno</div>
+      <div id="draw-pile" class="pile">Compra</div>
+    </div>
+  </div>
+
+  <script src="teste2.js"></script>
+</body>
+</html>
